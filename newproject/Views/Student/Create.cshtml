@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model newproject.Models.Student
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    <p>StudentName</p>
+    @Html.TextBoxFor(x => x.StudentName)
+
+    <p>Age</p>
+    @Html.TextBoxFor(x => x.Age)
+    <p>sex</p>
+    @Html.TextBoxFor(x => x.Sex)
+
+    <input type="submit" value="submit" />
+}
+
+
