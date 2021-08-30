@@ -61,9 +61,24 @@ namespace newproject.Controllers
             var studentList = studentBusiness.EditStudent(std);
             return RedirectToAction("Index", studentList);
         }
+        
 
-        //Delete(id)
-        //studentBusiness.Delete(id)
+        public ActionResult Delete(int id)
+        {
+            var studentList = studentBusiness.Delete(id);
+
+            return View("Index", studentList);
+            //return View(studentList);
+        }
+       
+        //public ActionResult detail()
+        //{           
+        //    // Delete chua lam xong ma doi lam detail
+
+        //    List<Student> obj = 
+        //    studentBusiness.GetStudentById(id);
+        //    return RedirectToAction("Index");
+        //}
 
     }
 

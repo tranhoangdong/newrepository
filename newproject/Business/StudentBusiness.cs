@@ -19,7 +19,7 @@ namespace newproject.Business
                     new Student(){ StudentId=7, StudentName="Rob", Age = 19,Sex ="Male" }
         };
 
-        public List<Student> GetStudentList ()
+        public List<Student> GetStudentList()
         {
             return studentList.ToList();
         }
@@ -49,10 +49,21 @@ namespace newproject.Business
             return student;
         }
 
-        public void Delete(int id)
+        // method nay de delete student bang id
+        public List<Student> Delete(int id)
         {
+            var student = studentList.Where(s => s.StudentId == id).FirstOrDefault();
+            studentList.Remove(student);
             //write code to update student 
-            
+
+            return studentList.ToList();
         }
+
+
+        // accesleve keu-tra-ve-tenham()
+        //{ => casi nay phai co
+        //} => casi nay phai co
+        // ok ko?
+        //ok
     }
 }
