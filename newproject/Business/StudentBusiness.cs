@@ -59,6 +59,12 @@ namespace newproject.Business
             return studentList.ToList();
         }
 
+        public Student Detail(int id)
+        {
+            var student = studentList.Where(s => s.StudentId == id).FirstOrDefault();
+            return student;
+        }
+
 
         // accesleve keu-tra-ve-tenham()
         //{ => casi nay phai co

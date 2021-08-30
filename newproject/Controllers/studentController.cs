@@ -70,7 +70,13 @@ namespace newproject.Controllers
             return View("Index", studentList);
             //return View(studentList);
         }
-       
+        public ActionResult Details(int id)
+        {
+            var student = studentBusiness.Detail(id);
+
+            return View(student);
+        }
+
         //public ActionResult detail()
         //{           
         //    // Delete chua lam xong ma doi lam detail
