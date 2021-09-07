@@ -1,5 +1,4 @@
 ﻿using newproject.Business;
-using newproject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Web.Mvc;
 
 namespace newproject.Controllers
 {
-
+   
 
     public class StudentController : Controller
     {
@@ -34,13 +33,10 @@ namespace newproject.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(string studentName, int age, string sex)
-        {
-            // TODO
-            var student = new Student();
-            student.StudentName = studentName;
-            student.Age = age;
-            student.Sex = sex;
+        public ActionResult Create(Student student)
+        { 
+            
+          
 
             studentBusiness.AddStudent(student);
 
@@ -77,14 +73,7 @@ namespace newproject.Controllers
             return View(student);
         }
 
-        //public ActionResult detail()
-        //{           
-        //    // Delete chua lam xong ma doi lam detail
-
-        //    List<Student> obj = 
-        //    studentBusiness.GetStudentById(id);
-        //    return RedirectToAction("Index");
-        //}
+        
 
     }
 

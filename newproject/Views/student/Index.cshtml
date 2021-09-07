@@ -1,4 +1,4 @@
-﻿@model IEnumerable<newproject.Models.Student>
+﻿@model IEnumerable<newproject.Student>
 
 @{
     ViewBag.Title = "Index";
@@ -38,9 +38,10 @@
                 @Html.DisplayFor(modelItem => item.Sex)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |*@
+                <a href="/Student/Edit?id=@item.StudentID">Edit</a>
+                @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })
 
             </td>
         </tr>

@@ -1,4 +1,4 @@
-﻿@model newproject.Models.Student
+﻿@model newproject.Student
 
 @{
     ViewBag.Title = "Details";
@@ -27,29 +27,6 @@
             @Html.DisplayFor(model => model.Age)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.isNewlyEnrolled)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.isNewlyEnrolled)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DoB)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoB)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Sex)
@@ -62,6 +39,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
