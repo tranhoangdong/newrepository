@@ -18,5 +18,8 @@ namespace newproject
         public string StudentName { get; set; }
         public Nullable<int> Age { get; set; }
         public string Sex { get; set; }
+        public Nullable<int> GradeID { get; set; }
+    
+        public virtual Grade Grade { get; set; }
     }
 }

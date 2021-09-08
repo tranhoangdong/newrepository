@@ -26,5 +26,6 @@ namespace newproject
         }
     
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<Grade> Grades { get; set; }
     }
 }
