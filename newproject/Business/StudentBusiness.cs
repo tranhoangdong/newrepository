@@ -23,8 +23,7 @@ namespace newproject.Business
 
         public Student GetStudentById(int id)
         {
-            //Get the student from studentList sample collection for demo purpose.
-            //Get the student from the database in the real application
+      
             var std = db.Students.Where(s => s.StudentID == id).FirstOrDefault();
 
             return std;
@@ -64,5 +63,7 @@ namespace newproject.Business
         //} => casi nay phai co
         // ok ko?
         //ok
+       
+
     }
 }

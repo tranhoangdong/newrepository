@@ -12,7 +12,7 @@ namespace newproject.Controllers
     public class StudentController : Controller
     {
         StudentBusiness studentBusiness;
-
+        // GradeBusiness  gradeBusiness;
         public StudentController()
         {
             studentBusiness = new StudentBusiness();
