@@ -1,4 +1,5 @@
-﻿using System;
+﻿using newproject.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,9 +11,22 @@ namespace newproject.Business
         TestMVCEntities db = new TestMVCEntities();
         public List<Grade> GetGradeList()
         {
-            var GradeList = db.Grades.ToList();
-            return GradeList;
+            var gradeList = db.Grades.ToList();
+            return gradeList;
         }
+
+        public List<GradeViewModel> GetGradeViewModelList()
+        {
+            var gradeList = db.Grades.ToList().Select(x => new GradeViewModel
+            {
+                GradeID = x.GradeID,
+                GradeName = x.GradeName
+            })
+            .ToList();
+
+            return gradeList;
+        }
+
         public void AddGrade (Grade grade)
         {
             db.Grades.Add(grade);

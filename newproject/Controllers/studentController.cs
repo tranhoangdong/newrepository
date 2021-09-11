@@ -1,4 +1,5 @@
 ﻿using newproject.Business;
+using newproject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,11 @@ namespace newproject.Controllers
     public class StudentController : Controller
     {
         StudentBusiness studentBusiness;
-        // GradeBusiness  gradeBusiness;
+        GradeBusiness  gradeBusiness;
         public StudentController()
         {
             studentBusiness = new StudentBusiness();
+            gradeBusiness = new GradeBusiness();
         }
 
         // GET: Student
@@ -29,7 +31,10 @@ namespace newproject.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var model = new CreateStudentViewModel();
+            var gradeList = gradeBusiness.GetGradeViewModelList();
+            model.Grades = gradeList;
+            return View(model);
         }
 
         [HttpPost]
@@ -46,7 +51,7 @@ namespace newproject.Controllers
 
         public ActionResult Edit(int id)
         {
-            var std = studentBusiness.GetStudentById(id);
+            var std = studentBusiness.GetStudentViewModelById(id);
 
             return View(std);
         }

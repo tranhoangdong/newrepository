@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model newproject.Student
+@model newproject.ViewModels.CreateStudentViewModel
 
 <h2>Create</h2>
 
@@ -16,6 +16,22 @@
     @Html.TextBoxFor(x => x.Age)
     <p>sex</p>
     @Html.TextBoxFor(x => x.Sex)
+    @*<p>GradeName</p>
+        @Html.TextBoxFor(x => x.Grade.GradeName)*@
+
+
+<label for="cars">Choose a Grade:</label>
+<select name="GradeID" id="cars">
+    @foreach (var grade in Model.Grades)
+    {
+    <option value="@grade.GradeID">@grade.GradeName</option>
+    }
+</select>
+
+
+
+    @* @Html.TextBoxFor(x => x.GradeID) *@
+
 
     <input type="submit" value="submit" />
 }

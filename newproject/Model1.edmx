@@ -9,20 +9,20 @@
           <Key>
             <PropertyRef Name="GradeID" />
           </Key>
-          <Property Name="GradeID" Type="int" Nullable="false" />
-          <Property Name="GradeName" Type="nchar" MaxLength="10" />
+          <Property Name="GradeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GradeName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
             <PropertyRef Name="StudentID" />
           </Key>
-          <Property Name="StudentID" Type="int" Nullable="false" />
-          <Property Name="StudentName" Type="nchar" MaxLength="50" />
+          <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="50" />
           <Property Name="Age" Type="int" />
-          <Property Name="Sex" Type="nchar" MaxLength="10" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="50" />
           <Property Name="GradeID" Type="int" />
         </EntityType>
-        <Association Name="FK_Student_Grade">
+        <Association Name="FK_GradeStudent">
           <End Role="Grade" Type="Self.Grade" Multiplicity="0..1" />
           <End Role="Student" Type="Self.Student" Multiplicity="*" />
           <ReferentialConstraint>
@@ -37,7 +37,7 @@
         <EntityContainer Name="TestMVCModelStoreContainer">
           <EntitySet Name="Grade" EntityType="Self.Grade" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Student_Grade" Association="Self.FK_Student_Grade">
+          <AssociationSet Name="FK_GradeStudent" Association="Self.FK_GradeStudent">
             <End Role="Grade" EntitySet="Grade" />
             <End Role="Student" EntitySet="Student" />
           </AssociationSet>
@@ -51,9 +51,9 @@
             <PropertyRef Name="StudentID" />
           </Key>
           <Property Name="StudentID" Type="Int32" Nullable="false" />
-          <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="Int32" />
-          <Property Name="Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GradeID" Type="Int32" />
           <NavigationProperty Name="Grade" Relationship="TestMVCModel.FK_Student_Grade" FromRole="Student" ToRole="Grade" />
         </EntityType>
@@ -70,7 +70,7 @@
             <PropertyRef Name="GradeID" />
           </Key>
           <Property Name="GradeID" Type="Int32" Nullable="false" />
-          <Property Name="GradeName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="GradeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Students" Relationship="TestMVCModel.FK_Student_Grade" FromRole="Grade" ToRole="Student" />
         </EntityType>
         <Association Name="FK_Student_Grade">
