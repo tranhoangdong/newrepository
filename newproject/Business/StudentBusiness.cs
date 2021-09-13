@@ -22,13 +22,13 @@ namespace newproject.Business
             db.SaveChanges(); // Khi them thi phai save Change.
         }
 
-        public Student GetStudentById(int id)
-        {
+        //public Student GetStudentById(int id)
+        //{
       
-            var std = db.Students.Where(s => s.StudentID == id).FirstOrDefault();
+        //    var std = db.Students.Where(s => s.StudentID == id).FirstOrDefault();
 
-            return std;
-        }
+        //    return std;
+        //}
 
         public EditStudentViewModel GetStudentViewModelById(int id)
         {

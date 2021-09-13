@@ -159,7 +159,9 @@
     <Compile Include="Student.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CreateGradeViewModel.cs" />
     <Compile Include="ViewModels\CreateStudentViewModel.cs" />
+    <Compile Include="ViewModels\EditGradeViewModel.cs" />
     <Compile Include="ViewModels\EditStudentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -32,9 +32,16 @@ namespace newproject.Business
             db.Grades.Add(grade);
             db.SaveChanges();
         }
-        public Grade GetByID( int id)
+        public EditGradeViewModel GetGradeViewModeByID( int id)
         {
-            var Gra = db.Grades.Where(s => s.GradeID == id).FirstOrDefault();
+            var Gra = db.Grades.Where(s => s.GradeID == id)
+               .Select(x => new EditGradeViewModel // Chuyen can
+               {
+                 
+                   GradeID = x.GradeID,
+                   GradeName = x.GradeName
+               })
+                .FirstOrDefault();
 
             return Gra ;
         }

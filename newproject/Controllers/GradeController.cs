@@ -1,4 +1,5 @@
 ﻿using newproject.Business;
+using newproject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,10 @@ namespace newproject.Controllers
         }
         public ActionResult Create()
         {
-            return View();
+            var model = new CreateGradeViewModel();
+            var gradeList = gradeBusiness.GetGradeViewModelList();
+            model.GradeName = gradeList.ToString();
+            return View(model);
         }
 
         [HttpPost]
@@ -35,7 +39,7 @@ namespace newproject.Controllers
 
         public ActionResult Edit(int id)
         {
-            var gra = gradeBusiness.GetByID(id);
+            var gra = gradeBusiness.GetGradeViewModeByID(id);
 
             return View(gra);
         }

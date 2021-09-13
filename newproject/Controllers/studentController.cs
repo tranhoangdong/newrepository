@@ -31,7 +31,7 @@ namespace newproject.Controllers
 
         public ActionResult Create()
         {
-            var model = new CreateStudentViewModel();
+            var model = new CreateStudentViewModel(); 
             var gradeList = gradeBusiness.GetGradeViewModelList();
             model.Grades = gradeList;
             return View(model);
