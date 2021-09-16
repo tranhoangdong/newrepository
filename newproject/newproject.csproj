@@ -163,6 +163,7 @@
     <Compile Include="ViewModels\CreateStudentViewModel.cs" />
     <Compile Include="ViewModels\EditGradeViewModel.cs" />
     <Compile Include="ViewModels\EditStudentViewModel.cs" />
+    <Compile Include="ViewModels\TestViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -226,6 +227,7 @@
     <Content Include="Views\Grade\Edit.cshtml" />
     <Content Include="Views\Grade\Delete.cshtml" />
     <Content Include="Views\Student\Edit.cshtml" />
+    <None Include="Views\Student\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

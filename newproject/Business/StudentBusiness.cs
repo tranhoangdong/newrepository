@@ -15,7 +15,18 @@ namespace newproject.Business
             var studentList = db.Students.ToList();
             return studentList;
         }
-
+        public List<TestViewModel> GetTestViewModel()
+        {
+            var studentList = db.Students.ToList().Select(x => new TestViewModel
+            {
+                StudentName = x.StudentName,
+                Age = x.Age,
+                Sex = x.Sex,
+                GradeID = x.GradeID
+            })
+                .ToList();
+            return studentList;
+        }
         public void AddStudent(Student student)
         {
             db.Students.Add(student);

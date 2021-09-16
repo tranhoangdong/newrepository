@@ -14,7 +14,7 @@ namespace newproject.Business
             var gradeList = db.Grades.ToList();
             return gradeList;
         }
-
+       
         public List<GradeViewModel> GetGradeViewModelList()
         {
             var gradeList = db.Grades.ToList().Select(x => new GradeViewModel

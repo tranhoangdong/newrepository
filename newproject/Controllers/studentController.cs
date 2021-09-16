@@ -77,7 +77,11 @@ namespace newproject.Controllers
 
             return View(student);
         }
-
+        public ActionResult Test()
+        {
+            var studentList = studentBusiness.GetTestViewModel();
+            return View(studentList);
+        }
         
 
     }

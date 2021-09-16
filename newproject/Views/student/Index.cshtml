@@ -5,46 +5,46 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3>@Html.Password("Password")</h3>
+
 <h2>THONG TIN SINH VIEN</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped table-dark ">
     <tr>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.StudentName)
         </th>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.Age)
         </th>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.Sex)
         </th>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.Grade.GradeName)
         </th>
-        <th></th>
+        <th scope="col"></th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td scope="col">
                 @Html.DisplayFor(modelItem => item.StudentName)
             </td>
-            <td>
+            <td scope="col">
                 @Html.DisplayFor(modelItem => item.Age)
             </td>
-            <td>
+            <td scope="col">
                 @Html.DisplayFor(modelItem => item.Sex)
             </td>
-            <td>
+            <td scope="col">
                 @Html.DisplayFor(modelItem => item.Grade.GradeName)
-               
+
             </td>
-            <td>
+            <td scope="col">
                 @*@Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |*@
                 <a href="/Student/Edit?id=@item.StudentID">Edit</a>
                 @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
@@ -55,3 +55,4 @@
     }
 
 </table>
+

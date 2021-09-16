@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+}
+@model IEnumerable<newproject.ViewModels.TestViewModel>
+
+<h2>DANH SACH SINH VIEN</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <table class=" table ">
+        <thead class=" thead-dark">
+            <tr> 
+                <th scope="col">
+                    @Html.DisplayNameFor(Model=> Model.StudentName)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(Model => Model.Age)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(Model => Model.Sex)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(Model => Model.Grade.GradeID)
+                </th>
+
+                <th scope="col"> </th>
+            </tr>
+        </thead>
+        @foreach (var item in Model )
+       
+        {
+            <tr>
+                <td scope="col">
+                    @Html.DisplayFor(modelItem => item.StudentName )
+                </td>
+                <td scope="col">
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td scope="col">
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td scope="col">
+                    @Html.DisplayFor(modelItem => item.Grade.GradeName)
+
+                </td>
+                <td scope="col">
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |*@
+                    <a href="/Student/Edit?id=@item.StudentID">Edit</a>
+                    @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</body>
+
