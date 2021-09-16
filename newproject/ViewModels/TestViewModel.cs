@@ -13,7 +13,10 @@ namespace newproject.ViewModels
         public Nullable<int> Age { get; set; }
         public string Sex { get; set; }
         public int? GradeID { get; set; }
+        public string GradeName { get; set; }
 
-        public virtual Grade Grade { get; set; }
+        public string TenTuoi { get; set; }
+
+        //public virtual Grade Grade { get; set; }
     }
 }
