@@ -24,6 +24,7 @@ namespace newproject.Business
                 Sex = x.Sex,
                 GradeID = x.GradeID,
                 GradeName = x.Grade.GradeName,
+                StudentID = x.StudentID
                
             })
             .ToList();

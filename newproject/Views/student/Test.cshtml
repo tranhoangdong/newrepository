@@ -17,7 +17,7 @@
             <div class="col-md-2">Age</div>
             <div class="col-md-2">Sex</div>
             <div class="col-md-2">GradeName</div>
-            <div class="col-md-3">Action</div>
+            <div class="col-md-3 mt-1 mb-1">Action</div>
         </div>
 
         @foreach (var item in Model)
@@ -27,10 +27,11 @@
                 <div class="col-md-2">@item.Age</div>
                 <div class="col-md-2">@item.Sex</div>
                 <div class="col-md-2">@item.GradeName</div>
-                <div class="col-md-3">
+                <div class="col-md-3 mt-1 mb-1">
                     <a href="/Student/Edit?id=@item.StudentID">Edit</a>
                     @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.StudentID })*@
+                    <button class="btn btn-sm btn-danger js--delete" id="@item.StudentID">Delete</button>
                 </div>
             </div>
         }
